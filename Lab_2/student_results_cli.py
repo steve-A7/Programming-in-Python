@@ -6,7 +6,7 @@ If possible we will also save it in a .csv file.
 """
 
 from __future__ import annotations
-from data_processor import add_student
+from data_processor import add_student, list_students, search_student
 
 
 def print_menu() -> None:
@@ -28,13 +28,9 @@ def main() -> None:
          case "1":
             add_student(students)
          case "2":
-            print("Listing all student results...")
-            #Here list all student results logic will be implemented
-            pass
+            list_students(students)
          case "3":
-            print("Searching student by Id...")
-            #Here search student by Id logic will be implemented
-            pass
+           search_student(students)
          case "4":
             print("Deleting student by Id...")
             #Here delete student by Id logic will be implemented
