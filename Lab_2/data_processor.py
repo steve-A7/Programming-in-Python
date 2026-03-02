@@ -78,3 +78,17 @@ def search_student(students: list[dict]) -> None:
         print_student_report(student)
     else:
         print(f"No student found with Id: {sid}")
+
+def delete_student_by_id(students: list[dict], sid: str) -> bool:
+    student = find_student_by_id(students, sid)
+    if student:
+        students.remove(student)
+        return True
+    return False
+
+def delete_student(students: list[dict]) -> None:
+    sid= prompt_non_empty("Enter student Id to delete: ")
+    if delete_student_by_id(students, sid):
+        print(f"Student with Id {sid} has been deleted.")
+    else:
+        print(f"No student found with Id: {sid}")
